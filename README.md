@@ -1,6 +1,6 @@
 # Low Mountain Grasslands under the Stress of Climate Change
 
-This GitHub repository provides all the necessary documents (code and datasets) for the article titled "Low mountain grasslands under the stress of Climate Change." The repository is organized into three distinct folders, each corresponding to key steps in the submitted article. If you want to download the datasets, pease follow this [link](https://zenodo.org/records/10204066)
+This GitHub repository provides all the necessary documents (code and datasets) for the article titled "Low mountain grasslands under the stress of Climate Change." subimitted to AGU JGR:Biogeosciences. The repository is organized into three distinct folders, each corresponding to key steps in the submitted article. If you want to download the datasets, pease follow this [link](https://zenodo.org/records/10204066)
 
 If you use this script and/or these datasets, please cite the paper as follow.
 
