@@ -4,7 +4,7 @@ This GitHub repository provides all the necessary documents for the article titl
 
 ## Trends_NDVI_max
 
-This section enables the reproduction of the calculation of annual NDVI max trends from 2000 to 2020 using MODQ13 data. It is based on Theil Sen slopes and Mann-Kendall tests. The provided code also allows for the reproduction of the frequency histogram based on the assigned class for each pixel (positive, negative, non-significant). Additionally, it generates a bar chart detailing the proportion of each trend class based on the dominant land cover class. The two necessary files for this section are:
+This section enables the reproduction of the calculation of annual NDVI max trends from 2000 to 2020 using MODIS data. It is based on Theil Sen slopes and Mann-Kendall tests. The provided code also allows for the reproduction of the frequency histogram based on the assigned class for each pixel (positive, negative, non-significant). Additionally, it generates a bar chart detailing the proportion of each trend class based on the dominant land cover class. The two necessary files for this section are:
 
 1. `Table_NDVImax_annual.csv`
 2. `Table_info.csv`
