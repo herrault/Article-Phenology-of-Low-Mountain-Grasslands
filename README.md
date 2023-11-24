@@ -4,7 +4,7 @@ This GitHub repository provides all the necessary documents (code and datasets) 
 
 If you use this script and/or these datasets, please cite the paper as follow.
 
-Herrault, PA., Ertlen, D., & Ullman, A. (Soumis). Low mountain grasslands under the stress of climate change. *Journal of Geophysical Research: Biogeosciences* [Data set]. Zenodo.https://zenodo.org/doi/10.5281/zenodo.10204065
+- Herrault, PA., Ertlen, D., & Ullman, A. (Soumis). Low mountain grasslands under the stress of climate change. *Journal of Geophysical Research: Biogeosciences* [Data set]. Zenodo.https://zenodo.org/doi/10.5281/zenodo.10204065
 
 
 ## Trends_NDVI_max
