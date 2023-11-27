@@ -25,8 +25,28 @@ library(ggplot2)
 
 # Import Data
 X = read.csv("table_globale.csv")
-```
+## Column names and Definition
+# ID = ID pixel
+# x = coordinate x of the pixel centroid
+# y = coordinate y of the pixel centroid
+# last_snow = day of last presence of snow
+# first_snow = day of first presence of snow
+# ssl = snow season length
+# swi = soil wetness index
+# sfgws = spring frozen ground without snow
+# year = year
+# scv = snow cover variability
+# sos = day of start of season
+# eos = day of end of season
+# dop = day of date of peak
+# pkv = peak of value
+# climatic_balance = climatic balance
+# T_max_summer = summer maximum temperature
+# TTP =Time to Peak
+# Elev = Elevation
+# DAH = Diurnal Anistropic Heating
 
+```
 
 ```{r setup2 }
 # Scaling the 'ssl' variable in the data frame or matrix X, centering and scaling it.
