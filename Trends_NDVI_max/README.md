@@ -28,6 +28,12 @@ library(wql)
 
 # Read the CSV file "Table_NDVImax_annual.csv" into the data frame W
 W = read.csv("Table_NDVImax_annual.csv")
+## Column names and definition
+# ID = ID pixels
+# x = coordinate x of the pixel centroid
+# y = coordinate y of the pixel centroid
+# pkv = peak of value
+# date = year
 
 # Extract unique IDs from the data frame
 id = unique(W$ID)
@@ -79,6 +85,8 @@ M$class[M$pval_mann > 0.05] = 1
 
 # Read another CSV file "table_info.csv" into the data frame 'X'
 X = read.csv("table_info.csv")
+## Column names and definition
+# LandCover = Dominant land cover in the pixel (shrubs or herbaceous)
 
 # Merge the 'M' and 'X' data frames based on the common column "ID"
 ET = merge(M, X, by = "ID")
