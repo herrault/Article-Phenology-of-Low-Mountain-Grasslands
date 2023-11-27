@@ -10,8 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
+This code allows to perform the stage 2. It is a loop that iteratively perform random forest model with a synthetic oversampling technique called SMOTE (Synthetic Minority Over-sampling Technique). The three main points are : 
 
-This code appears is a loop that iteratively performs some classification tasks using a random forest model with a synthetic oversampling technique called SMOTE (Synthetic Minority Over-sampling Technique). 
+- Perform Random Forest
+- Create boxplots featuring Gini and Mean Decrease accuracy
+- Create partial dependence plots
 
 ## Perform Random Forest 
 
