@@ -26,6 +26,15 @@ library(performanceEstimation)
 # Import Data
 
 Y = read.csv("data_randomforest.csv")
+## Column names and Definition
+# ID = ID pixel
+# class = class of trends (1- non significant; 2-significant negative)
+# DAH = Diurnal Anistropic Heating
+# Elevation = Elevation
+# CBL_sl = Climatic balance slope
+# T_max_sl =  Summer maximum temperature slope
+# SWI_sl = Soil Wetness Index slope
+# SOS_sl = Start of Season Slope
 
 # Initialize lists to store metrics and results
 list_kappa = list()
