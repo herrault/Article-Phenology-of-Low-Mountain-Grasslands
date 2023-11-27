@@ -8,8 +8,15 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Introduction
 
-# Etape 1
+This is an R Markdown document to perform the stage 1 of the article published in JGR:Biogeosciences "Low-mountain grasslands under the stress of Climate Change" (Herrault_et_al_2023). 
+
+- Calculate NDVI max trends
+- Enhance the output table
+- Create Histograms and barplots
+- 
+# Read the data
 ```{r setup1 }
 
 # Import Packages
@@ -47,6 +54,7 @@ X = read.csv("table_globale.csv")
 # DAH = Diurnal Anistropic Heating
 
 ```
+# Scaling the variables
 
 ```{r setup2 }
 # Scaling the 'ssl' variable in the data frame or matrix X, centering and scaling it.
@@ -70,6 +78,7 @@ a10 = scale(X$pkv, center = TRUE, scale = TRUE)
 # Scaling the 'TTP' variable in the data frame or matrix X, centering and scaling it.
 a11 = scale(X$TTP, center = TRUE, scale = TRUE)
 ```
+# Checking covariance between variables
 
 ```{r setup3 }
 
@@ -95,6 +104,7 @@ corrplot(MM, method = "color", col = col(200),
 
 
 ```
+# Perfoming Linear mixed models and variance inflation factors
 
 ```{r setup4 }
 
@@ -113,6 +123,7 @@ fm2 <- lme(a11 ~ a1 + a2 + a3 + a4 + a5 + a1:a4 + a1:a5 + a2:a4 + a2:a5 + a3:a4 
 # Calculating the Variance Inflation Factor (VIF) for the fitted model fm2
 VIF(fm2)
 ```
+# Plotting statistical effects
 
 ```{r setup5 }
 
@@ -173,6 +184,7 @@ ddd = plot_model(fm2, type = "pred", terms = c("a2", "a5"), colors = "bw") +
       ylab("Time to Peak (TTP)")
 ```
 
+# Plotting relationships between variables
 
 ```{r setup6 }
 # Load the ggpubr library for enhanced ggplot2 functionalities
