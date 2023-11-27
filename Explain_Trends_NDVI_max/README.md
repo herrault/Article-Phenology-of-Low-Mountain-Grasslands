@@ -11,7 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-This code appears is a loop that iteratively performs some classification tasks using a random forest model with a synthetic oversampling technique called SMOTE (Synthetic Minority Over-sampling Technique). 
+This code allows to perform the stage 2. It is a loop that iteratively perform random forest model with a synthetic oversampling technique called SMOTE (Synthetic Minority Over-sampling Technique). The three main points are : 
+
+- Perform Random Forest
+- Create boxplots featuring Gini and Mean Decrease accuracy
+- Create partial dependence plots
 
 ## Perform Random Forest 
 
@@ -151,7 +155,7 @@ mean(abs(res_acc_class2))
 
 ```
 
-## Produce boxplots featuring Gini and Mean Decrease accuracy
+## Create boxplots featuring Gini and Mean Decrease accuracy
 
 ```{r setup2 }
 # Combine Gini values from different variables into a data frame
@@ -180,7 +184,7 @@ b2 = ggplot(TAB_gini, aes(x = var, y = MeanDecreaseAccuracy, fill = var)) +
   theme(legend.position = "none")
 ```
 
-## Produce partial dependence plots
+## Create partial dependence plots
 
 ```{r setup3 }
 
