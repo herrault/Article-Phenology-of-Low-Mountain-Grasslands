@@ -4,7 +4,7 @@ This GitHub repository provides all the necessary documents (code and datasets) 
 
 If you use this script and/or these datasets, please cite the paper as follow.
 
-- Herrault, PA., Ertlen, D., & Ullman, A. (Soumis). Low mountain grasslands under the stress of climate change. *Journal of Geophysical Research: Biogeosciences* [Data set]. Zenodo.https://zenodo.org/doi/10.5281/zenodo.10204065
+- Herrault, P.-A ; Ullmann, A & Ertlen, D. (2023b) Statistical analysis to investigate phenology of low mountain grasslands [Software]. Github. https://github.com/herrault/Article-Phenology-of-Low-Mountain-Grasslands/tree/main
 
 
 ## Trends_NDVI_max
