@@ -18,6 +18,7 @@ This code allows to perform the stage 2. It is a loop that iteratively perform r
 - Create partial dependence plots
 
 ## Perform Random Forest 
+```{r setup1 }
 
 # Import Packages
 library(randomForest)
