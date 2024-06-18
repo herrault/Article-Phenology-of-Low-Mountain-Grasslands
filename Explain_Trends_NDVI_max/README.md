@@ -19,7 +19,6 @@ This code allows to perform the stage 2. It is a loop that iteratively perform r
 
 ## Perform Random Forest 
 
-```{r setup1 }
 # Import Packages
 library(randomForest)
 library(datasets)
@@ -29,7 +28,8 @@ library(performanceEstimation)
 
 # Import Data
 
-Y = read.csv("data_randomforest.csv")
+Y = read.csv("data_randomforest_.csv")
+
 ## Column names and Definition
 # ID = ID pixel
 # class = class of trends (1- non significant; 2-significant negative)
@@ -56,8 +56,8 @@ list_PP = list()
 # Loop for 100 iterations
 for (t in 1:100) {
   # Extract positive and negative classes from the dataset
-  Y1 = Y[Y$class == 2,]  # Positive class
-  Y2 = Y[Y$class == 1,]  # Negative class
+  Y1 = Y[Y$class == 1,]  
+  Y2 = Y[Y$class == 2,]  
   
   # Concatenate positive and negative classes
   Y_agg = rbind(Y1, Y2)
@@ -71,21 +71,27 @@ for (t in 1:100) {
   final_df <- rbind(Y_agg[Y_agg$class == 1,], sub_df)
   
   # Split the data into true negative and false negative subsets
-  true_neg = final_df[1:67,]
-  false_neg = final_df[68:nrow(final_df),]
+  
+  #idd = which(final_df$class==2)
+  #true_neg = final_df[idd[1:67],]
+  #false_neg = final_df[-idd[1:67],]
+  
+  
+  true_pos = final_df[1:67,]
+  false_pos = final_df[68:nrow(final_df),]
   
   # Sample indices for training set
-  y1 = sample(seq(1, nrow(Y1)), round((66/100) * nrow(Y1)))
-  y2_1 = sample(seq(1, nrow(true_neg)), round((66/100) * nrow(true_neg)))
-  y2_2 = sample(seq(1, nrow(false_neg)), round((66/100) * nrow(false_neg)))
+  y1 = sample(seq(1, nrow(Y2)), round((66/100) * nrow(Y2)))
+  y2_1 = sample(seq(1, nrow(true_pos)), round((66/100) * nrow(true_pos)))
+  y2_2 = sample(seq(1, nrow(false_pos)), round((66/100) * nrow(false_pos)))
   
   # Create training and testing sets
-  Y_train = rbind(Y1[y1,], rbind(true_neg[y2_1,], false_neg[y2_2,]))
-  Y_test_class1 = Y1[-y1,]
-  Y_test = rbind(Y_test_class1, true_neg[-y2_1,])
+  Y_train = rbind(Y2[y1,], rbind(true_pos[y2_1,], false_pos[y2_2,]))
+  Y_test_class2 = Y2[-y1,]
+  Y_test = rbind(Y_test_class2, true_pos[-y2_1,])
   
   # Train a random forest model
-  model <- randomForest(as.factor(class) ~ ., data = Y_train[, -1], ntree = 200, na.action = na.omit, importance = TRUE)
+  model <- randomForest(as.factor(class) ~ ., data = Y_train[, -c(1,2)], ntree = 200, na.action = na.omit, importance = TRUE)
   
   # Get variable importance measures
   obj = varImpPlot(model)
@@ -104,13 +110,13 @@ for (t in 1:100) {
   list_pp = list()
   op <- par(mfrow = c(2, 3))
   for (u in 1:length(impvar)){
-    pp = partialPlot(model, Y_train[, -1], impvar[u], xlab = impvar[u], main = paste("Partial Dependence on", impvar[u]))
+    pp = partialPlot(model, Y_train[, -c(1,2)], impvar[u], xlab = impvar[u], main = paste("Partial Dependence on", impvar[u]))
     list_pp[[u]] = pp
   }
   par(op)
   
   # Make predictions on the test set
-  Y_test$predicted <- predict(model, Y_test)
+  Y_test$predicted <- predict(model, Y_test[,-c(1,2)])
   
   # Evaluate model performance
   CF = confusionMatrix(as.factor(Y_test$predicted), as.factor(Y_test$class))
