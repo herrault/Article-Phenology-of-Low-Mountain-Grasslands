@@ -31,6 +31,7 @@ library(performanceEstimation)
 Y = read.csv("data_randomforest_.csv")
 
 ## Column names and Definition
+
 # ID = ID pixel
 # class = class of trends (1- non significant; 2-significant negative)
 # DAH = Diurnal Anistropic Heating
