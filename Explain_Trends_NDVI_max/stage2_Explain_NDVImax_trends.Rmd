@@ -2,7 +2,7 @@
 title: "Script_explain_trends_annualNDVImax"
 output:
   html_document: default
-  pdf_document: default
+  pdf_document: default 
 ---
 
 ```{r setup, include=FALSE}
