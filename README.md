@@ -1,10 +1,10 @@
-# Low Mountain Grasslands under the Stress of Climate Change
+# Phenology-Productivity of Low Mountain Grasslands
 
-This GitHub repository provides all the necessary documents (code and datasets) for the article titled "Low mountain grasslands under the stress of Climate Change." subimitted to AGU JGR:Biogeosciences. The repository is organized into three distinct folders, each corresponding to key steps in the submitted article. If you want to download the datasets, please follow this [link](https://zenodo.org/records/10204066)
+This GitHub repository provides all the necessary documents (code and datasets) for the article "Combined effects of topography, soil moisture and snow cover regimes on the growth response of grasslands in a low mountain range (Vosges, France)" (Herrault et al., 2024) accepted in EGU Biogeosciences Journal. The repository is organized into three distinct folders, each corresponding to key steps in the submitted article. If you want to download the datasets, please follow this [link](https://zenodo.org/records/10204066)
 
 If you use this script and/or these datasets, please cite the paper as follow.
 
-- Herrault, P.-A ; Ullmann, A & Ertlen, D. (2023b) Statistical analysis to investigate phenology of low mountain grasslands [Software]. Github. https://github.com/herrault/Article-Phenology-of-Low-Mountain-Grasslands/tree/main
+- Herrault, P.-A ; Ullmann, A & Ertlen, D. (2024b) Statistical analysis to investigate phenology of low mountain grasslands [Software]. Github. https://github.com/herrault/Article-Phenology-of-Low-Mountain-Grasslands/tree/main
 
 
 ## Trends_NDVI_max
